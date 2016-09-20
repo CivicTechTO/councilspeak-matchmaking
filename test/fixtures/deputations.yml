@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  speaker: one
+  presenter: one
+  agenda_item: one
+  video_url: MyString
+
+two:
+  speaker: two
+  presenter: two
+  agenda_item: two
+  video_url: MyString

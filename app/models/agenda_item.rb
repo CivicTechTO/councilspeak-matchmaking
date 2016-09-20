@@ -1,0 +1,2 @@
+class AgendaItem < ApplicationRecord
+end
