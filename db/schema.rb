@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160920192133) do
     t.index ["speaker_id"], name: "index_deputations_on_speaker_id"
   end
 
-  create_table "people", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "organization"
     t.string   "postal_address"

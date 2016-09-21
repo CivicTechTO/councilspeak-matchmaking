@@ -1,2 +1,2 @@
-class Speaker < Person
+class Speaker < User
 end
