@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+# TODO: Seed agenda items from API from today to next week.
+# https://toronto-ocd-api.herokuapp.com/events/?start_time__gte=2016-09-21&start_time__lte=2016-09-38
 
 require 'csv'
 
