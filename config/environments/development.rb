@@ -54,5 +54,5 @@ Rails.application.configure do
 
   # Action Mailer
   config.action_mailer.delivery_method = :file
-  config.action_mailer.file_settings = location: Rails.root.join('tmp/mail')
+  config.action_mailer.file_settings = {location: Rails.root.join('tmp/mail')}
 end
