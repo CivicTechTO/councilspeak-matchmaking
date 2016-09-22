@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'agenda_items/index'
+
   post 'logins/create'
   get 'sessions/create'
   delete 'sessions/destroy'
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :presenters
   resources :deputations
   resources :users
+  resources :agenda_items
 
   root to: 'static_pages#home'
 
