@@ -53,6 +53,7 @@ gem "select2-rails"
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'mailgun_rails'
 end
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
