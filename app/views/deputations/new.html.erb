@@ -1,0 +1,23 @@
+<%= form_for :deputation, url: deputations_path do |f| %>
+  <p>
+    <% items_array = AgendaItem.all.map { |item| ["#{item.identifier}: #{item.title}", item.id] } %>
+    <%= f.label :agenda_item %><br />
+    <%= f.select(:agenda_item_id) do %>
+      <%= options_for_select(items_array) %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.label :video_url %><br />
+    <%= f.text_field :video_url %>
+  </p>
+
+  <% if current_user.anonymous? %>
+    <p>You are not logged in</p>
+    <!-- We'll put a contact details form here -->
+  <% end %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
