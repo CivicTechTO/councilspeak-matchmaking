@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  post 'logins/create'
+  get 'sessions/create'
+  delete 'sessions/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :presenters
+  resources :users
 
   root to: 'static_pages#home'
 
