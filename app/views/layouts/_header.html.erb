@@ -15,14 +15,18 @@
           <div class="form-group">
             <%= text_field_tag 'email', nil, placeholder: 'Email', required: true %>
             <span>
-              <%= button_tag 'Submit', class: "btn btn-success" %>
+              <%= button_tag 'Login / Register', class: "btn btn-success" %>
             </span>
+          </div>
         <% end %>
       <% else %>
-        <div class="navbar-right">
-          Login in as <%= current_user.name %>
-          <%= button_to 'Logout', sessions_destroy_path, method: :delete, class: "btn btn-success" %>
-        </div>
+        <%= form_tag sessions_destroy_path, method: :delete, class: "navbar-form navbar-right" do %>
+          <div class="form-group">
+            <span>
+              <%= button_tag 'Logout', class: "btn btn-success" %>
+            </span>
+          </div>
+        <% end %>
       <% end %>
     </div><!--/.navbar-collapse -->
   </div>
