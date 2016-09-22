@@ -15,6 +15,12 @@
   <% if current_user.anonymous? %>
     <p>You are not logged in</p>
     <!-- We'll put a contact details form here -->
+  <% else %>
+    <p>You are submitting a video as <%= current_user.name %>.</p>
+    <p>Please ensure the following information is up-to-date.</p>
+    <p><%= label_tag :mailing_address %> <%= text_field_tag :user_name, current_user.postal_address, disabled: true %></p>
+    <p><%= label_tag :organization %> <%= text_field_tag :user_name, current_user.organization, disabled: true %></p>
+    <p><%= label_tag :daytime_phone %> <%= text_field_tag :user_name, current_user.phone, disabled: true %></p>
   <% end %>
 
   <p>
