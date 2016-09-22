@@ -3,7 +3,7 @@
     <% items_array = AgendaItem.all.map { |item| ["#{item.identifier}: #{item.title}", item.id] } %>
     <%= f.label :agenda_item %><br />
     <%= f.select(:agenda_item_id) do %>
-      <%= options_for_select(items_array) %>
+      <%= options_for_select(items_array.unshift(['', 0]) ) %>
     <% end %>
   </p>
 
