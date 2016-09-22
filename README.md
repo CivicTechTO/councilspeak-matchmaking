@@ -21,6 +21,22 @@ bundle exec rake db:setup
 bundle exec rails server
 ```
 
+### Heroku
+
+Requirements:
+
+* Heroku Toolbelt
+
+```
+heroku create myappname
+heroku addons:create heroku-postgresql:hobby-dev
+heroku addons:create mailgun:starter
+git push heroku master
+heroku run rake db:schema:load
+heroku run rake db:migrate
+heroku run rake db:seed
+```
+
 ### Inspiration
 
 This project was inspired by the amazing [SpeakTO
