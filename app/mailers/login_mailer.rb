@@ -7,6 +7,7 @@ class LoginMailer < ApplicationMailer
   #
   def login_link(user)
     @user = user
+    @host = ENV['HEROKU_APP_NAME'] ? "#{ENV['HEROKU_APP_NAME']}.herokuapp.com" : "localhost:3000"
 
     mail from: 'admin@example.com', to: @user.email, subject: "Sing-in for CouncilSpeak Matchmaking"
   end

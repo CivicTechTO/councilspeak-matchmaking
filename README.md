@@ -31,6 +31,7 @@ Requirements:
 heroku create myappname
 heroku addons:create heroku-postgresql:hobby-dev
 heroku addons:create sendgrid:starter
+heroku labs:enable runtime-dyno-metadata
 git push heroku master
 heroku run rake db:schema:load
 heroku run rake db:migrate

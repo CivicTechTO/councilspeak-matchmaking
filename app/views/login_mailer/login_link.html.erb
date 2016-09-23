@@ -2,5 +2,5 @@
 
 Click on following link to log in:
 <p>
-  <%= link_to 'sign-in', sessions_create_url(host: 'localhost:3000', token: @user.login_token) %>
+  <%= link_to 'sign-in', sessions_create_url(host: @host, token: @user.login_token) %>
 </p>
