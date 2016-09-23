@@ -8,6 +8,6 @@ class LoginMailer < ApplicationMailer
   def login_link(user)
     @user = user
 
-    mail to: @user.email, subject: "Sing-in for CouncilSpeak Matchmaking"
+    mail from: 'admin@example.com', to: @user.email, subject: "Sing-in for CouncilSpeak Matchmaking"
   end
 end
