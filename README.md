@@ -43,7 +43,7 @@ heroku run rake db:seed
 This project was inspired by the amazing [SpeakTO
 project](https://github.com/xenyal/tplhack), created during the "Remote
 Deputations" Challenge at the [TO Prosperity
-Hackathon](http://www.torontopubliclibrary.ca/hackathon/)<super>1</super>.
+Hackathon](http://www.torontopubliclibrary.ca/hackathon/).<sup>1</sup>
 
-<super>[1]: Supporting document: [Google Doc - Challenge
-Summaries](https://docs.google.com/document/d/1o5Q8Od25HvMXVYQqK2pjpl6k8Z1as5fxeovfi37S68w/edit?ts=5798eb82#heading=h.vyblhz62pbr3)</super>
+<sup>[1]: Supporting document: [Google Doc - Challenge
+Summaries](https://docs.google.com/document/d/1o5Q8Od25HvMXVYQqK2pjpl6k8Z1as5fxeovfi37S68w/edit?ts=5798eb82#heading=h.vyblhz62pbr3)</sup>
