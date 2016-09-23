@@ -30,7 +30,7 @@ Requirements:
 ```
 heroku create myappname
 heroku addons:create heroku-postgresql:hobby-dev
-heroku addons:create mailgun:starter
+heroku addons:create sendgrid:starter
 git push heroku master
 heroku run rake db:schema:load
 heroku run rake db:migrate

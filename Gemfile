@@ -49,12 +49,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Custom
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "select2-rails"
-gem "rest-client", "< 2.0" # mailgun_rails fix
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-  gem 'mailgun_rails'
+  gem 'sendgrid'
 end
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
