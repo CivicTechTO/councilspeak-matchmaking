@@ -5,8 +5,13 @@ class PresentersController < ApplicationController
 
   def new
     if current_user.registered?
-      current_user.update!(is_presenter: true)
-      flash[:success] = "Success! You are now registered as a volunteer presenter!"
+      if current_user.is_presenter
+        flash[:info] = "You are already registered as a volunteer presenter."
+      else
+        current_user.update!(is_presenter: true)
+        flash[:success] = "Success! You are now registered as a volunteer presenter!"
+      end
+
       redirect_to root_path
     end
   end
