@@ -2,7 +2,7 @@ $(document).ready(function() {
   function formatAgendaItem (item) {
     if (item.loading) return item.text;
 
-    var markup = '<strong>'+item.identifier + ':</strong> ' + item.title + ' (' + item.organization + ')';
+    var markup = '<strong>'+item.identifier + ':</strong> ' + item.title + ' (' + item.organization + ', ' + item.upcoming_date + ')';
 
     return markup;
   }

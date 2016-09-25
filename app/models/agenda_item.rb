@@ -1,4 +1,6 @@
 class AgendaItem < ApplicationRecord
+  attr_accessor :upcoming_date
+
   validates :identifier, presence: true
   validates :title, presence: true
   validates :meeting_date, presence: true
@@ -7,6 +9,15 @@ class AgendaItem < ApplicationRecord
   validates_uniqueness_of :identifier, scope: :meeting_date
 
   has_many :deputations
+
+  def attributes
+    # Ensure non-persistent field renders in JSON response
+    super.merge(upcoming_date: self.upcoming_date)
+  end
+
+  def upcoming_date
+    self.meeting_date.strftime('%a %b %_d')
+  end
 
   def self.upcoming
     where('meeting_date >= ?', Date.today)
