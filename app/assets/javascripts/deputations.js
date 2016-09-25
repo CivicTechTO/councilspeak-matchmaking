@@ -14,7 +14,7 @@ $(document).ready(function() {
     ajax: {
       url: '/agenda_items.json',
       dataType: 'json',
-      delay: 250,
+      delay: 1000,
       data: function(params) {
         return {
           search: params.term,
