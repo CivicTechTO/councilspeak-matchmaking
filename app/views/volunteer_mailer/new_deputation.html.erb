@@ -1,0 +1,15 @@
+<h1>CouncilSpeak Matchmaking</h1>
+
+<p>
+  As per your preferences, we have a new video deputation for you to consider adopting:
+</p>
+
+<p>
+  <%= @deputation.video_url %>
+</p>
+
+<% if ENV['EMAIL_ADMIN'] -%>
+  <p>
+    For support, please contact <a href="mailto:<%= ENV['EMAIL_ADMIN'] %>">the site administrator</a>.
+  </p>
+<% end %>

@@ -14,6 +14,9 @@ class DeputationsController < ApplicationController
     @user = User.find(user_id).update!(user_params)
 
     @deputation.save!
+
+    VolunteerMailer.new_deputation(@deputation).deliver
+
     flash[:success] = "Submitted video! You will receive an email when someone adopts it."
     redirect_to root_path
   end
