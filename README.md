@@ -36,7 +36,6 @@ git push heroku master
 heroku run rake db:schema:load
 heroku run rake db:migrate
 heroku run rake db:seed
-heroku config:set RAILS_ENV=test
 
 # If desired, add a scheduled job to import agenda items daily
 heroku addons:create scheduler
