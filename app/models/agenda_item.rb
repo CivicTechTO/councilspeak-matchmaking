@@ -4,6 +4,8 @@ class AgendaItem < ApplicationRecord
   validates :meeting_date, presence: true
   validates :organization, presence: true
 
+  validates_uniqueness_of :identifier, scope: :meeting_date
+
   has_many :deputations
 
   def self.upcoming

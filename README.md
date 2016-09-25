@@ -36,6 +36,11 @@ git push heroku master
 heroku run rake db:schema:load
 heroku run rake db:migrate
 heroku run rake db:seed
+
+# If desired, add a scheduled job to import agenda items daily
+heroku addons:create scheduler
+heroku addons:open scheduler
+# Add the following job: rake db:import_agenda_items
 ```
 
 ### Inspiration
