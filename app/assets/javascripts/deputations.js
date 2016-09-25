@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   $("#deputation_agenda_item_id").select2({
     theme: "bootstrap",
-    placeholder: "Search agenda items by title, identifier, or committee name",
+    placeholder: "Search by title, identifier, or committee name",
     width: 'auto',
     ajax: {
       url: '/agenda_items.json',

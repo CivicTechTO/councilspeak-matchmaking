@@ -1,12 +1,15 @@
 <%= form_for :deputation, url: deputations_path do |f| %>
   <p>
     <% items_array = AgendaItem.all.map { |item| ["#{item.identifier}: #{item.title}", item.id] } %>
+    <%= f.label :agenda_item_id %>
     <%= f.select(:agenda_item_id, items_array, include_blank: true) %>
   </p>
 
   <p>
     <%= f.text_field :video_url, placeholder: "Link to video" %>
   </p>
+
+  <hr />
 
   <%= fields_for @user do |user_form| %>
     <p>
