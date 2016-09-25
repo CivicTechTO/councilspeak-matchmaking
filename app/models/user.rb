@@ -9,11 +9,19 @@ class User < ApplicationRecord
     false
   end
 
+  def registered?
+    true
+  end
+
 end
 
 class NullUser
   def anonymous?
     true
+  end
+
+  def registered?
+    false
   end
 
   def id
