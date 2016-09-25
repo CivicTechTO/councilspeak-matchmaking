@@ -1,2 +1,22 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit account</h1>
+<%= form_for @user, url: {action: "create"} do |f| %>
+  <p>
+    <%= f.text_field :name, placeholder: :name %>
+  </p>
+
+  <p>
+    <%= f.text_field :organization, placeholder: :organization %>
+  </p>
+
+  <p>
+    <%= f.text_field :postal_address, placeholder: "Home address" %>
+  </p>
+
+  <p>
+    <%= f.text_field :phone, placeholder: "Daytime phone" %>
+  </p>
+
+  <p>
+    <%= f.submit "Save", class: "btn btn-default" %>
+  </p>
+<% end %>

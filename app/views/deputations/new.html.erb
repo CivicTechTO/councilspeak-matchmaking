@@ -1,27 +1,35 @@
 <%= form_for :deputation, url: deputations_path do |f| %>
   <p>
     <% items_array = AgendaItem.all.map { |item| ["#{item.identifier}: #{item.title}", item.id] } %>
-    <%= f.label :agenda_item %><br />
     <%= f.select(:agenda_item_id, items_array, include_blank: true) %>
   </p>
 
   <p>
-    <%= f.label :video_url %><br />
-    <%= f.text_field :video_url %>
+    <%= f.text_field :video_url, placeholder: "Link to video" %>
   </p>
 
-  <% if current_user.anonymous? %>
-    <p>You are not logged in</p>
-    <!-- We'll put a contact details form here -->
-  <% else %>
-    <p>You are submitting a video as <%= current_user.name %>.</p>
-    <p>Please ensure the following information is up-to-date.</p>
-    <p><%= label_tag :mailing_address %> <%= text_field_tag :user_name, current_user.postal_address, disabled: true %></p>
-    <p><%= label_tag :organization %> <%= text_field_tag :user_name, current_user.organization, disabled: true %></p>
-    <p><%= label_tag :daytime_phone %> <%= text_field_tag :user_name, current_user.phone, disabled: true %></p>
-  <% end %>
+  <%= fields_for @user do |user_form| %>
+    <p>
+      <%= user_form.label :name, "Your name" %>
+      <%= user_form.text_field :name %>
+    </p>
 
+    <p>
+      <%= user_form.label :postal_address, "Home address" %>
+      <%= user_form.text_field :postal_address %>
+    </p>
+
+    <p>
+      <%= user_form.label :organization, "Organization (optional)" %>
+      <%= user_form.text_field :organization %>
+    </p>
+
+    <p>
+      <%= user_form.label :phone, "Daytime phone (optional)" %>
+      <%= user_form.text_field :phone %>
+    </p>
+  <% end %>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "btn btn-default" %>
   </p>
 <% end %>

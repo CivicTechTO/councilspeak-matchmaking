@@ -6,12 +6,15 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    user_id = current_user.anonymous? ? params[:id] : current_user.id
+    @user = User.find(user_id)
   end
 
   def update
-    User.find(params[:id]).update!(name: params[:user][:name])
-    redirect_to users_path
+    user_id = current_user.anonymous? ? params[:id] : current_user.id
+    User.find(user_id).update!(user_params)
+    flash[:info] = "Your account details have been updated!"
+    redirect_to root_path
   end
 
 private
@@ -21,5 +24,9 @@ private
       flash[:danger] = 'Not authenticated'
       redirect_to root_path
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :organization, :postal_address, :phone)
   end
 end

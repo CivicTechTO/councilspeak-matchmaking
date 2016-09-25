@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :users
   resources :agenda_items
 
+  get 'account', to: 'users#edit'
+  patch 'users', to: 'users#update'
+
   root to: 'static_pages#home'
 
   match '/volunteer', to: 'presenters#new',     via: 'get'
