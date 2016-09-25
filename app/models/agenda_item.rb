@@ -13,7 +13,9 @@ class AgendaItem < ApplicationRecord
   end
 
   def self.search(term)
-    where("title LIKE ? OR identifier LIKE ? OR organization LIKE ?", "%#{term}%", "%#{term}%", "%#{term}%")
+    # Ensure case-insensitive for SQLite3 and PostgreSQL
+    term = term.downcase
+    where("lower(title) LIKE ? OR lower(identifier) LIKE ? OR lower(organization) LIKE ?", "%#{term}%", "%#{term}%", "%#{term}%")
   end
 
   rails_admin do
