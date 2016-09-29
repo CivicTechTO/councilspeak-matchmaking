@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/CivicTechTO/councilspeak-matchmaking.png?label=ready&title=Ready)](https://waffle.io/CivicTechTO/councilspeak-matchmaking)
 # CouncilSpeak Matchmaking
 
 This platform aspires to connect citizens who want to speak
